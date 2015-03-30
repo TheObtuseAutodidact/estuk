@@ -4,7 +4,8 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = Book.where(availability: true)
+    #respond_with(@books)   this is in Tiago's file but not mine
   end
 
   # GET /books/1
