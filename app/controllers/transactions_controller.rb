@@ -1,7 +1,7 @@
 class TransactionsController < ApplicationController
   def create
   	book = Book.find_by!(slug: params[:slug])
-  	token = prams[:stripeToken]
+  	token = params[:stripeToken]
 
   	begin
   		charge = Stripe::Charge.create(
